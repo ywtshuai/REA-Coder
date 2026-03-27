@@ -6,21 +6,6 @@ REA-Coder is an innovative, multi-agent collaborative framework inspired by soft
 
 Unlike standard direct-prompting methods, REA-Coder decomposes the code generation problem into a pipeline of specialized agents. This multi-agent architecture ensures that requirements are fully understood, edge cases are identified, and logic gaps are bridged before the final code is generated.
 
-The framework consists of four primary agents:
-
-- **Agent 1: Clarification (Question Generation)**
-  - **Role:** Analyzes the initial problem description to identify ambiguities, missing constraints, or unclear logic.
-  - **Action:** Generates targeted clarifying questions and produces "gold answers" to establish a solid foundation for the problem.
-- **Agent 2: Requirement Engineering**
-  - **Role:** Acts as the system architect.
-  - **Action:** Summarizes logic gaps, formalizes the requirements, and generates "stop test cases" to prevent infinite loops and ensure edge-case handling.
-- **Agent 3: Code Generation**
-  - **Role:** The primary developer.
-  - **Action:** Ingests the clarified requirements and answers from the previous agents to synthesize the final, robust code solution. It also includes mechanisms for filling masked requirements to ensure all constraints are met.
-- **Agent 4: Evaluation and Feedback**
-  - **Role:** The reviewer and tester.
-  - **Action:** Evaluates the generated code against the initial and refined requirements (mask recovery evaluation) and provides structured feedback for iterative refinement.
-
 ## Repository Structure
 
 The project is structured to separate the core REA-Coder framework from the comparative baseline methods.
@@ -29,10 +14,10 @@ The project is structured to separate the core REA-Coder framework from the comp
 .
 ├── REA-Coder/                      # Core implementation of the REA-Coder framework
 │   ├── apps_controller/            # Multi-agent logic and orchestration
-│   │   ├── agent1_questions.py     # Clarification and question generation
-│   │   ├── agent2_requirements.py  # Requirement engineering and gap summarization
-│   │   ├── agent3_codegen.py       # Code generation and answer synthesis
-│   │   ├── agent4_feedback.py      # Evaluation and feedback generation
+│   │   ├── questions.py     		# Clarification and question generation
+│   │   ├── requirements.py  		# Requirement engineering and gap summarization
+│   │   ├── codegen.py       		# Code generation and answer synthesis
+│   │   ├── feedback.py      		# Evaluation and feedback generation
 │   │   ├── prompts_markdown/       # System prompts for all agents
 │   │   └── run_eval.py             # Main execution script
 │   ├── apps_eval/                  # Execution and evaluation environment
