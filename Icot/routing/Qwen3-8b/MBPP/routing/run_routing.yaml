@@ -1,0 +1,32 @@
+model:
+  model_name: Qwen3-8B
+  model_path: 
+
+
+prompts:
+  system: "You are an expert in analyzing code task difficulty."
+  user: |
+      You will see a Python function definition (including comments and input parameters).
+      Please classify its task complexity into one of three categories:
+      - Easy
+      - Medium
+      - Hard
+
+      Consider data structures, algorithmic complexity, edge cases, implementation steps, recursion, etc.
+
+      Output in the following format:
+      Medium: because it requires recursive logic and careful base case handling.
+
+      The function task is as follows:
+      Task Description:
+      {prompt}
+
+      Function Implementation:
+      {code}
+
+processing:
+  input_path: 
+  output_path: 
+  max_samples: null
+  max_tokens: 100
+  temperature: 0

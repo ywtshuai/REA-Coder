@@ -1,0 +1,6 @@
+jsonlines==4.0.0
+openai==1.82.1
+numpy==2.0.2
+func-timeout==4.3.5
+tqdm==4.67.1
+evalplus==0.3.1

@@ -1,0 +1,29 @@
+openai:
+  api_key: ""
+  base_url: ""
+  model: "gpt-4o"
+  temperature: 0
+  max_tokens: 100
+
+prompts:
+  system: "You are an expert in analyzing code task difficulty."
+  user: |
+    You will see a Python coding task(including the task description and function implementatio).
+    Please classify its task complexity into one of three categories:
+    - Easy
+    - Medium
+    - Hard
+
+    Consider data structures, algorithmic complexity, edge cases, implementation steps, recursion, etc.
+
+    Output in the following format:
+    Medium: because it requires recursive logic and careful base case handling.
+
+    The function task is as follows:
+    {prompt_text}
+
+processing:
+  input_path: ""
+  output_path: ""
+  sleep_seconds: 1.0
+  max_samples: null 
